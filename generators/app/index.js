@@ -73,13 +73,19 @@ module.exports = yeoman.Base.extend({
           type: 'list',
           name: 'scala',
           message: 'Scala version',
-          default: '2.11.7'
+          default: '2.11.7',
+          choices: [
+            { name: '2.11.7', value: '2.11.7'}
+          ]
         },
         {
           type: 'list',
           name: 'sbt',
           message: 'sbt version',
-          default: '0.13.9'
+          default: '0.13.9',
+          choices: [
+            { name: '0.13.9', value: '0.13.9'}
+          ]
         }
       ];
 
@@ -98,7 +104,7 @@ module.exports = yeoman.Base.extend({
         'plugins.sbt'
       ];
 
-      this.helper.copyTpl('sbt-base', {targetFolder: 'project', writeOnceFiles: projectFiles});
+      this.helper.copyTpl('sbt-base/project', {targetFolder: 'project', writeOnceFiles: projectFiles});
       this.helper.copyTpl('sbt-base', {writeOnceFiles: rootFiles});
     }
   },

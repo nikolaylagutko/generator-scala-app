@@ -34,18 +34,18 @@ describe('generator-scala-app:app', function () {
   });
 
   it('should contain formatted name from prompt in build.sbt', function() {
-    assert.fileContent('project/build.sbt', 'name := "myexampleproject"');
+    assert.fileContent('build.sbt', 'name := "myexampleproject"');
   });
 
   it('should contain organization in lowercase in build.sbt', function() {
-    assert.fileContent('project/build.sbt', 'organization := "org.example"');
+    assert.fileContent('build.sbt', 'organization := "org.example"');
   });
 
   it('should contain configured version in build.sbt', function() {
-    assert.fileContent('project/build.sbt', 'version := "0.2.0-Beta"');
+    assert.fileContent('build.sbt', 'version := "0.2.0-Beta"');
   })
 
   it('should contain configured scala version in build.sbt', function() {
-    assert.fileContent('project/build.sbt', 'scalaVersion := "2.11.6"');
+    assert.fileContent('build.sbt', 'scalaVersion := "2.11.6"');
   });
 });

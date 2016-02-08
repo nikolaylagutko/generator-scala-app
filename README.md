@@ -1,4 +1,4 @@
-# generator-scala-app [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-scala-app [![NPM version][npm-image]][npm-url] [![Build Status][https://travis-ci.org/nikolaylagutko/generator-scala-app.svg]][http://travis-ci.org/nikolaylagutko/generator-scala-app] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Generator for Scala projects
 
 ## Installation

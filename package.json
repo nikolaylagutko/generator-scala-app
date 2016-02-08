@@ -20,8 +20,7 @@
   "dependencies": {
     "underscore.string": "^3.2.3",
     "yeoman-generator": "^0.22.5",
-    "yo-java-helper": "^1.0.0",
-    "yosay": "^1.1.0"
+    "yo-java-helper": "^1.0.0"
   },
   "devDependencies": {
     "eslint-config-xo-space": "^0.8.0",

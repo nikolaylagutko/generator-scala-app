@@ -5,10 +5,9 @@ const formatters = require('../generators/app/formatters.js');
 const R = require('ramda');
 const _ = require('underscore.string');
 
-describe('formatters', function() {
-
-  it('leaves only good character in artifact name', function() {
-    var property = jsc.forall(jsc.asciistring, function(input) {
+describe('formatters', function () {
+  it('leaves only good character in artifact name', function () {
+    var property = jsc.forall(jsc.asciistring, function (input) {
       var result = formatters.artifactName(input);
 
       return R.all(isArtifactName)(_.chars(result));
@@ -17,8 +16,8 @@ describe('formatters', function() {
     jsc.assert(property);
   });
 
-  it('lowercases everything for artifact group', function() {
-    var property = jsc.forall(jsc.asciistring, function(input) {
+  it('lowercases everything for artifact group', function () {
+    var property = jsc.forall(jsc.asciistring, function (input) {
       var result = formatters.artifactGroup(input);
 
       return R.all(isLowercased)(_.chars(result));
@@ -42,5 +41,4 @@ describe('formatters', function() {
   function isLetter(char) {
     return char.match(/[a-z]/i);
   }
-
 });

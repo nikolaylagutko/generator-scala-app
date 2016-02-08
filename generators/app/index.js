@@ -1,7 +1,6 @@
 'use strict';
 const yeoman = require('yeoman-generator');
 const chalk = require('chalk');
-const yosay = require('yosay');
 const Helper = require('yo-java-helper');
 const formatters = require('./formatters.js');
 
@@ -11,26 +10,26 @@ const questions = [
   'version',
   'scala',
   'sbt'
-]
+];
 
 module.exports = yeoman.Base.extend({
 
-  constructor: function() {
+  constructor: function () {
     yeoman.Base.apply(this, arguments);
 
     this.helper = new Helper(this, require('../../package.json'));
   },
 
-  initializing: function() {
+  initializing: function () {
     this.helper.initConfig(questions);
   },
 
   prompting: {
-    greeting: function() {
+    greeting: function () {
 
     },
 
-    name: function() {
+    name: function () {
       if (this.context.updateMode) {
         // update must be started from project folder - no need to ask for name
         return;
@@ -48,7 +47,7 @@ module.exports = yeoman.Base.extend({
       this.helper.prompt(prompts, ['name'], props => this.appname = formatters.artifactName(props.name));
     },
 
-    artifact: function() {
+    artifact: function () {
       var prompts = [
         {
           type: 'input',
@@ -67,7 +66,7 @@ module.exports = yeoman.Base.extend({
       this.helper.prompt(prompts, questions, props => this.organization = formatters.artifactGroup(props.organization));
     },
 
-    scala: function() {
+    scala: function () {
       var prompts = [
         {
           type: 'list',
@@ -75,7 +74,7 @@ module.exports = yeoman.Base.extend({
           message: 'Scala version',
           default: '2.11.7',
           choices: [
-            { name: '2.11.7', value: '2.11.7'}
+            {name: '2.11.7', value: '2.11.7'}
           ]
         },
         {
@@ -84,7 +83,7 @@ module.exports = yeoman.Base.extend({
           message: 'sbt version',
           default: '0.13.9',
           choices: [
-            { name: '0.13.9', value: '0.13.9'}
+            {name: '0.13.9', value: '0.13.9'}
           ]
         }
       ];
@@ -94,7 +93,7 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: {
-    base: function() {
+    base: function () {
       const rootFiles = [
         'build.sbt'
       ];

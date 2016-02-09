@@ -106,9 +106,5 @@ module.exports = yeoman.Base.extend({
       this.helper.copyTpl('sbt-base/project', {targetFolder: 'project', writeOnceFiles: projectFiles});
       this.helper.copyTpl('sbt-base', {writeOnceFiles: rootFiles});
     }
-  },
-
-  install: function () {
-    this.installDependencies();
   }
 });

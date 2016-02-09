@@ -2,21 +2,26 @@
 
 const _ = require('underscore.string');
 
-module.exports = {
+var Formatter = function () {
 
-  artifactName: artifactName,
-  artifactGroup: artifactGroup
+  var artifactGroup = function(source) {
+    return source.toLowerCase();
+  };
+
+  var artifactName = function(source) {
+    return _words(_.dasherize(source));
+  };
+
+  var _words = function(source) {
+    return source.replace(/\W/g, '');
+  };
+
+  return {
+    artifactName: artifactName,
+    artifactGroup: artifactGroup
+  };
 
 };
 
-function artifactGroup(source) {
-  return source.toLowerCase();
-}
+module.exports = Formatter();
 
-function artifactName(source) {
-  return words(_.dasherize(source));
-}
-
-function words(source) {
-  return source.replace(/\W/g, '');
-}
